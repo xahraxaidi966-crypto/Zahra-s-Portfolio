@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Zahra Ali Zaidi | Radiant Art Space – Art Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0612;
+      background-image: radial-gradient(circle at 20% 10%, #1f1535 1px, transparent 1px),
+                        radial-gradient(circle at 80% 30%, #2d1b3a 2px, transparent 2px),
+                        radial-gradient(circle at 40% 80%, #1b1230 1px, transparent 1px);
+      background-size: 60px 60px, 90px 90px, 70px 70px;
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      color: #e4d9f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #120c1f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6d4f9c;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(160, 130, 210, 0.3);
+      padding-bottom: 1.2rem;
+    }
+
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(180deg, #d9b4ff, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 15px #6d28d9;
+      font-family: 'Cinzel', serif;
+    }
+
+    .logo span {
+      font-size: 1rem;
+      display: block;
+      letter-spacing: 3px;
+      background: linear-gradient(to right, #b992e0, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #cbb9f0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      position: relative;
+      font-family: 'Cinzel', serif;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #c084fc;
+      box-shadow: 0 0 10px #a855f7;
+      transition: width 0.4s;
+    }
+
+    nav a:hover {
+      color: #f5e9ff;
+      text-shadow: 0 0 8px #b288f0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-bottom: 5rem;
+      background: rgba(20, 12, 35, 0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 60px 20px 60px 20px;
+      padding: 2.5rem 2.8rem;
+      border: 1px solid rgba(138, 92, 200, 0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      color: #ede4ff;
+      text-shadow: 0 0 20px #7e22ce;
+      font-family: 'Cinzel', serif;
+    }
+
+    .highlight {
+      background: linear-gradient(to right, #d8b4fe, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #c5b0e6;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 2rem;
+      margin: 1.8rem 0;
+      font-size: 1.8rem;
+    }
+
+    .social-row a {
+      color: #b79aec;
+      transition: 0.3s;
+      filter: drop-shadow(0 0 6px #6d28d9);
+    }
+
+    .social-row a:hover {
+      color: #f2c9ff;
+      transform: translateY(-4px);
+      filter: drop-shadow(0 0 12px #c084fc);
+    }
+
+    .btn {
+      background: transparent;
+      border: 2px solid #8b5cf6;
+      color: #e9d5ff;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.4s;
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      background: rgba(80, 40, 120, 0.2);
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #7e22ce;
+      border-color: #c084fc;
+      box-shadow: 0 0 25px #a855f7;
+      color: #fff;
+      transform: scale(1.03);
+    }
+
+    .hero-visual {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .orb {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #b392f0, #1e1035);
+      box-shadow: 0 0 60px #a855f7, 0 0 120px #4c1d95;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: morph 8s infinite alternate;
+    }
+
+    .orb i {
+      font-size: 6rem;
+      color: #f0e2ff;
+      filter: drop-shadow(0 0 25px #d8b4fe);
+    }
+
+    @keyframes morph {
+      0% { border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%; }
+      100% { border-radius: 45% 55% 55% 45% / 40% 50% 50% 60%; }
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 3.5rem 0 2.5rem;
+      font-family: 'Cinzel', serif;
+      color: #e3d2ff;
+      text-shadow: 0 0 15px #7c3aed;
+      letter-spacing: 3px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .art-card {
+      background: rgba(25, 16, 45, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 30px 10px 30px 10px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 127, 231, 0.4);
+      transition: all 0.4s ease;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+
+    .art-card:hover {
+      transform: translateY(-10px);
+      border-color: #c084fc;
+      box-shadow: 0 20px 35px rgba(138, 80, 220, 0.5);
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 230px;
+      background: linear-gradient(135deg, #2a1e44, #100b1f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid #6d4f9c;
+      cursor: pointer;
+    }
+
+    .image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .image-placeholder img:hover {
+      transform: scale(1.05);
+    }
+
+    .image-placeholder i {
+      font-size: 3.5rem;
+      color: #b79aec;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .art-card:hover .image-placeholder i {
+      transform: scale(1.2);
+      color: #e9d5ff;
+      text-shadow: 0 0 20px #c084fc;
+    }
+
+    .upload-note {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      background: rgba(0,0,0,0.7);
+      color: #d6c0f0;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      pointer-events: none;
+    }
+
+    .card-info {
+      padding: 1.3rem 1.2rem 1.5rem;
+    }
+
+    .card-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      color: #f3e8ff;
+      font-family: 'Cinzel', serif;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .card-info h3:hover {
+      color: #d8b4fe;
+      text-shadow: 0 0 10px #a855f7;
+    }
+
+    .edit-icon {
+      font-size: 0.7rem;
+      color: #7c6aaa;
+      margin-left: 6px;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    .card-info h3:hover .edit-icon {
+      opacity: 1;
+    }
+
+    .card-info .category {
+      color: #b296e0;
+      font-size: 0.85rem;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card-info .category:hover {
+      color: #d8b4fe;
+    }
+
+    .upload-btn {
+      background: none;
+      border: 1px dashed #a78bfa;
+      color: #d3c0f5;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    .upload-btn:hover {
+      background: #5b21b6;
+      border-color: #d8b4fe;
+      color: white;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .traditional-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: rgba(30, 18, 50, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 50px 20px 50px 20px;
+      padding: 2.5rem;
+      border: 1px solid #6d4f9c;
+      margin: 2rem 0;
+      align-items: center;
+    }
+
+    .sketch-area {
+      flex: 1 1 280px;
+      text-align: center;
+    }
+
+    .sketch-area i {
+      font-size: 5rem;
+      color: #b28cf0;
+      margin-bottom: 1rem;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: rgba(18, 10, 28, 0.7);
+      backdrop-filter: blur(15px);
+      border-radius: 60px 20px 60px 20px;
+      padding: 3rem;
+      border: 1px solid #7e4bb0;
+      margin-top: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      font-size: 2.4rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: #c7adf0;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #f5d0fe;
+      filter: drop-shadow(0 0 15px #a855f7);
+    }
+
+    /* LIGHTBOX / FULLSCREEN ZOOM */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 3, 15, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 0 60px rgba(138, 80, 220, 0.6);
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox-content.zoomed {
+      transform: scale(1.8);
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 2.5rem;
+      color: #cbb9f0;
+      cursor: pointer;
+      z-index: 10000;
+      transition: 0.3s;
+    }
+
+    .lightbox-close:hover {
+      color: #fff;
+      text-shadow: 0 0 20px #c084fc;
+      transform: scale(1.2);
+    }
+
+    .lightbox-caption {
+      color: #d6c0f0;
+      margin-top: 1.2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .zoom-hint {
+      position: absolute;
+      bottom: 30px;
+      color: #7c6aaa;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      font-family: 'Cinzel', serif;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #736494;
+      border-top: 1px solid #392a55;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        Zahra Ali Zaidi
+        <span>Radiant Art Space</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#3d">3D Art</a></li>
+          <li><a href="#2d">2D & Animation</a></li>
+          <li><a href="#traditional">Traditional</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Visual Artist & <span class="highlight">Digital Sculptor</span></h1>
+        <div class="subtitle">3D Art · 2D Illustration · Animation · Traditional Media</div>
+        <p style="color:#c4b5e5; max-width:450px; margin-bottom:1.5rem; font-family: 'Cinzel', serif;">
+          I'm Zahra — crafting atmospheric worlds through sculpture, illustration, and moving art. 
+          Every piece is a journey into the ethereal and the profound.
+        </p>
+        <div class="social-row">
+          <a href="https://youtube.com/@Radiantartspace" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://instagram.com/Radiantartspace" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="#3d" class="btn"><i class="fas fa-cube" style="margin-right:8px;"></i> View Portfolio</a>
+      </div>
+      <div class="hero-visual">
+        <div class="orb">
+          <i class="fas fa-moon"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="3d">
+      <h2 class="section-title">🌑 3D Art & Sculpts</h2>
+      <div class="gallery-grid" id="3d-gallery"></div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <label for="3dUpload" class="btn"><i class="fas fa-upload"></i> Add 3D Artwork</label>
+        <input type="file" id="3dUpload" accept="image/*" multiple style="display:none;">
+      </div>
+    </section>
+
+    <section id="2d">
+      <h2 class="section-title">🦇 2D Illustration & Animation</h2>
+      <div class="gallery-grid" id="2d-gallery"></div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <label for="2dUpload" class="btn"><i class="fas fa-upload"></i> Add 2D / Animation</label>
+        <input type="file" id="2dUpload" accept="image/*,video/*" multiple style="display:none;">
+      </div>
+    </section>
+
+    <section id="traditional">
+      <h2 class="section-title">🕯️ Traditional Artworks</h2>
+      <div class="traditional-row">
+        <div class="sketch-area">
+          <i class="fas fa-paint-brush"></i>
+          <h3 style="color:#ddceff; font-family: 'Cinzel', serif;">Sketchbook & Canvas</h3>
+          <p style="color:#b9a6e0;">Charcoal, ink, watercolor — the timeless craft.</p>
+        </div>
+        <div class="gallery-grid" id="traditional-gallery" style="flex:2;"></div>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <label for="tradUpload" class="btn"><i class="fas fa-upload"></i> Add Traditional Piece</label>
+        <input type="file" id="tradUpload" accept="image/*" multiple style="display:none;">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">✨ Connect</h2>
+      <div class="contact-box">
+        <p style="font-size:1.2rem; color:#cbb5f0; font-family: 'Cinzel', serif;">Find my work and creative process on YouTube & Instagram</p>
+        <div class="social-links">
+          <a href="https://youtube.com/@Radiantartspace" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://instagram.com/Radiantartspace" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="color:#af9ccf; font-family: 'Cinzel', serif;">📧 zahra.zaidi@artportfolio.com</p>
+        <p style="margin-top:1rem; color:#8b7aaf; font-style: italic;">"Art is where the soul finds its voice."</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Zahra Ali Zaidi — Radiant Art Space. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Artwork">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <p class="zoom-hint">🖱️ Click image to zoom • Click outside to close</p>
+  </div>
+
+  <script>
+    (function() {
+      const galleries = {
+        '3d': [],
+        '2d': [],
+        'traditional': []
+      };
+
+      const defaultItems = {
+        '3d': [
+          { title: 'Ethereal Wraith', category: 'Blender / ZBrush', icon: 'fa-ghost' },
+          { title: 'Crystal Throne', category: '3D Concept', icon: 'fa-gem' },
+          { title: 'Nightmare Steed', category: 'Sculpture', icon: 'fa-horse-head' }
+        ],
+        '2d': [
+          { title: 'Witching Hour', category: 'Digital Paint', icon: 'fa-hat-wizard' },
+          { title: 'Shadow Puppet', category: 'Animation Loop', icon: 'fa-film' },
+          { title: 'Lunar Moth', category: 'Illustration', icon: 'fa-feather' }
+        ],
+        'traditional': [
+          { title: 'Ink & Thorn', category: 'Ink on paper', icon: 'fa-pen-fancy' },
+          { title: 'Charcoal Moon', category: 'Charcoal', icon: 'fa-draw-polygon' }
+        ]
+      };
+
+      // LIGHTBOX LOGIC
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      function openLightbox(src, caption) {
+        lightboxImg.src = src;
+        lightboxCaption.textContent = caption;
+        lightboxImg.classList.remove('zoomed');
+        lightbox.classList.add('active');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.classList.remove('zoomed');
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      lightboxImg.addEventListener('click', function(e) {
+        e.stopPropagation();
+        lightboxImg.classList.toggle('zoomed');
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      // INIT
+      function initGalleries() {
+        for (let type in defaultItems) {
+          defaultItems[type].forEach(item => {
+            galleries[type].push({
+              title: item.title,
+              category: item.category,
+              icon: item.icon,
+              src: null,
+              isPlaceholder: true
+            });
+          });
+        }
+        renderAllGalleries();
+      }
+
+      // EDITABLE TITLE & CATEGORY
+      function makeEditable(element, type, index, field) {
+        element.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const currentText = galleries[type][index][field];
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.value = currentText;
+          input.style.cssText = `
+            background: rgba(30,15,50,0.9);
+            border: 1px solid #a78bfa;
+            color: #f3e8ff;
+            font-family: 'Cinzel', serif;
+            font-size: ${field === 'title' ? '1.4rem' : '0.85rem'};
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            width: 90%;
+            outline: none;
+          `;
+          element.innerHTML = '';
+          element.appendChild(input);
+          input.focus();
+          input.select();
+
+          input.addEventListener('blur', () => {
+            const newVal = input.value.trim() || currentText;
+            galleries[type][index][field] = newVal;
+            renderGallery(type);
+          });
+
+          input.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter') {
+              input.blur();
+            }
+          });
+        });
+      }
+
+      // RENDER GALLERY
+      function renderGallery(type) {
+        const container = document.getElementById(`${type}-gallery`);
+        if (!container) return;
+        const items = galleries[type];
+        container.innerHTML = '';
+
+        if (items.length === 0) {
+          container.innerHTML = `<p style="color:#9b8ac4; text-align:center; grid-column:1/-1; font-family: 'Cinzel', serif;">✨ Awaiting your creations. Upload artwork above.</p>`;
+          return;
+        }
+
+        items.forEach((item, index) => {
+          const card = document.createElement('div');
+          card.className = 'art-card';
+          
+          const imageDiv = document.createElement('div');
+          imageDiv.className = 'image-placeholder';
+          
+          if (item.src) {
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.title;
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover';
+            img.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openLightbox(item.src, item.title);
+            });
+            imageDiv.appendChild(img);
+          } else {
+            const icon = document.createElement('i');
+            icon.className = `fas ${item.icon || 'fa-image'}`;
+            imageDiv.appendChild(icon);
+            const note = document.createElement('span');
+            note.className = 'upload-note';
+            note.textContent = 'click to upload';
+            imageDiv.appendChild(note);
+            imageDiv.addEventListener('click', () => {
+              triggerSingleUpload(type, index);
+            });
+          }
+
+          const infoDiv = document.createElement('div');
+          infoDiv.className = 'card-info';
+          
+          const titleEl = document.createElement('h3');
+          titleEl.textContent = item.title;
+          const editIcon = document.createElement('span');
+          editIcon.className = 'edit-icon';
+          editIcon.innerHTML = ' <i class="fas fa-pen"></i>';
+          titleEl.appendChild(editIcon);
+          makeEditable(titleEl, type, index, 'title');
+          
+          const catEl = document.createElement('div');
+          catEl.className = 'category';
+          catEl.textContent = item.category;
+          makeEditable(catEl, type, index, 'category');
+
+          infoDiv.appendChild(titleEl);
+          infoDiv.appendChild(catEl);
+          
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'upload-btn';
+          removeBtn.innerHTML = '<i class="fas fa-trash"></i> Remove';
+          removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            galleries[type].splice(index, 1);
+            renderGallery(type);
+          });
+          infoDiv.appendChild(removeBtn);
+
+          card.appendChild(imageDiv);
+          card.appendChild(infoDiv);
+          container.appendChild(card);
+        });
+      }
+
+      function renderAllGalleries() {
+        renderGallery('3d');
+        renderGallery('2d');
+        renderGallery('traditional');
+      }
+
+      function triggerSingleUpload(type, index) {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = type === '2d' ? 'image/*,video/*' : 'image/*';
+        input.onchange = (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+              if (galleries[type][index]) {
+                galleries[type][index].src = ev.target.result;
+                galleries[type][index].isPlaceholder = false;
+                renderGallery(type);
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        input.click();
+      }
+
+      function setupBulkUpload(inputId, type) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+        input.addEventListener('change', (e) => {
+          const files = Array.from(e.target.files);
+          if (files.length === 0) return;
+          
+          files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+              const title = file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, ' ');
+              galleries[type].push({
+                title: title || 'Untitled',
+                category: type === '3d' ? '3D Art' : (type === '2d' ? '2D/Animation' : 'Traditional'),
+                icon: 'fa-image',
+                src: ev.target.result,
+                isPlaceholder: false
+              });
+              renderGallery(type);
+            };
+            reader.readAsDataURL(file);
+          });
+          input.value = '';
+        });
+      }
+
+      setupBulkUpload('3dUpload', '3d');
+      setupBulkUpload('2dUpload', '2d');
+      setupBulkUpload('tradUpload', 'traditional');
+
+      initGalleries();
+    })();
+  </script>
+</body>
+</html>

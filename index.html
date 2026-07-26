@@ -257,31 +257,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       overflow: hidden;
       border-bottom: 2px solid #6d4f9c;
-      cursor: pointer;
     }
     .image-placeholder img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
       transition: 0.3s;
+      display: block;
     }
     .image-placeholder img:hover {
       transform: scale(1.05);
-    }
-    .image-placeholder i {
-      font-size: 3.5rem;
-      color: #b79aec;
-      opacity: 0.8;
-      transition: 0.3s;
-    }
-    .art-card:hover .image-placeholder i {
-      transform: scale(1.2);
-      color: #e9d5ff;
-      text-shadow: 0 0 20px #c084fc;
     }
 
     .card-info {
@@ -292,23 +279,6 @@
       margin-bottom: 0.3rem;
       color: #f3e8ff;
       font-family: 'Cinzel', serif;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-block;
-    }
-    .card-info h3:hover {
-      color: #d8b4fe;
-      text-shadow: 0 0 10px #a855f7;
-    }
-    .edit-icon {
-      font-size: 0.7rem;
-      color: #7c6aaa;
-      margin-left: 6px;
-      opacity: 0;
-      transition: 0.2s;
-    }
-    .card-info h3:hover .edit-icon {
-      opacity: 1;
     }
     .card-info .category {
       color: #b296e0;
@@ -316,32 +286,6 @@
       margin-bottom: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .card-info .category:hover {
-      color: #d8b4fe;
-    }
-
-    .upload-btn {
-      background: none;
-      border: 1px dashed #a78bfa;
-      color: #d3c0f5;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      margin-top: 0.5rem;
-      background: rgba(124, 58, 237, 0.1);
-    }
-    .upload-btn:hover {
-      background: #5b21b6;
-      border-color: #d8b4fe;
-      color: white;
     }
 
     .traditional-row {
@@ -389,65 +333,6 @@
     .social-links a:hover {
       color: #f5d0fe;
       filter: drop-shadow(0 0 15px #a855f7);
-    }
-
-    /* LIGHTBOX */
-    .lightbox-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(5, 3, 15, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      cursor: zoom-out;
-    }
-    .lightbox-overlay.active { display: flex; }
-    .lightbox-content {
-      max-width: 90vw;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 16px;
-      box-shadow: 0 0 60px rgba(138, 80, 220, 0.6);
-      cursor: default;
-      transition: transform 0.3s ease;
-    }
-    .lightbox-content.zoomed { transform: scale(1.8); cursor: zoom-out; }
-    .lightbox-close {
-      position: absolute;
-      top: 25px;
-      right: 35px;
-      font-size: 2.5rem;
-      color: #cbb9f0;
-      cursor: pointer;
-      z-index: 10000;
-      transition: 0.3s;
-    }
-    .lightbox-close:hover {
-      color: #fff;
-      text-shadow: 0 0 20px #c084fc;
-      transform: scale(1.2);
-    }
-    .lightbox-caption {
-      color: #d6c0f0;
-      margin-top: 1.2rem;
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-    .zoom-hint {
-      position: absolute;
-      bottom: 30px;
-      color: #7c6aaa;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      font-family: 'Cinzel', serif;
     }
 
     footer {
@@ -506,13 +391,70 @@
   <!-- 3D GALLERY -->
   <section id="3d">
     <h2 class="section-title">🌑 3D Art & Sculpts</h2>
-    <div class="gallery-grid" id="3d-gallery"></div>
+    <div class="gallery-grid">
+      <!-- Each art card uses a normal <img> with a placeholder src -->
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/wraith/400/300" alt="Ethereal Wraith">
+        </div>
+        <div class="card-info">
+          <h3>Ethereal Wraith</h3>
+          <div class="category">Blender / ZBrush</div>
+        </div>
+      </div>
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/throne/400/300" alt="Crystal Throne">
+        </div>
+        <div class="card-info">
+          <h3>Crystal Throne</h3>
+          <div class="category">3D Concept</div>
+        </div>
+      </div>
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/steed/400/300" alt="Nightmare Steed">
+        </div>
+        <div class="card-info">
+          <h3>Nightmare Steed</h3>
+          <div class="category">Sculpture</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- 2D GALLERY -->
   <section id="2d">
     <h2 class="section-title">🦇 2D Illustration & Animation</h2>
-    <div class="gallery-grid" id="2d-gallery"></div>
+    <div class="gallery-grid">
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/witch/400/300" alt="Witching Hour">
+        </div>
+        <div class="card-info">
+          <h3>Witching Hour</h3>
+          <div class="category">Digital Paint</div>
+        </div>
+      </div>
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/shadow/400/300" alt="Shadow Puppet">
+        </div>
+        <div class="card-info">
+          <h3>Shadow Puppet</h3>
+          <div class="category">Animation Loop</div>
+        </div>
+      </div>
+      <div class="art-card">
+        <div class="image-placeholder">
+          <img src="https://picsum.photos/seed/moth/400/300" alt="Lunar Moth">
+        </div>
+        <div class="card-info">
+          <h3>Lunar Moth</h3>
+          <div class="category">Illustration</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- TRADITIONAL -->
@@ -524,7 +466,26 @@
         <h3 style="color:#ddceff; font-family: 'Cinzel', serif;">Sketchbook & Canvas</h3>
         <p style="color:#b9a6e0;">Charcoal, ink, watercolor — the timeless craft.</p>
       </div>
-      <div class="gallery-grid" id="traditional-gallery" style="flex:2;"></div>
+      <div class="gallery-grid" style="flex:2;">
+        <div class="art-card">
+          <div class="image-placeholder">
+            <img src="https://picsum.photos/seed/inkthorn/400/300" alt="Ink & Thorn">
+          </div>
+          <div class="card-info">
+            <h3>Ink & Thorn</h3>
+            <div class="category">Ink on paper</div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="image-placeholder">
+            <img src="https://picsum.photos/seed/charcoalmoon/400/300" alt="Charcoal Moon">
+          </div>
+          <div class="card-info">
+            <h3>Charcoal Moon</h3>
+            <div class="category">Charcoal</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -546,199 +507,5 @@
     <p>© 2025 Zahra Ali Zaidi — Radiant Art Space. All rights reserved.</p>
   </footer>
 </div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightbox">
-  <span class="lightbox-close" id="lightboxClose">&times;</span>
-  <img class="lightbox-content" id="lightboxImg" src="" alt="Artwork">
-  <p class="lightbox-caption" id="lightboxCaption"></p>
-  <p class="zoom-hint">🖱️ Click image to zoom • Click outside to close</p>
-</div>
-
-<script>
-  (function() {
-    // ----- STATIC PLACEHOLDER IMAGES (replaceable via backend) -----
-    // Each gallery item has a 'src' pointing to a placeholder (via picsum)
-    // You can replace these URLs with your own backend images later.
-    const placeholderBase = 'https://picsum.photos/seed/';
-
-    const defaultItems = {
-      '3d': [
-        { title: 'Ethereal Wraith', category: 'Blender / ZBrush', icon: 'fa-ghost', src: placeholderBase + 'wraith/400/300' },
-        { title: 'Crystal Throne', category: '3D Concept', icon: 'fa-gem', src: placeholderBase + 'throne/400/300' },
-        { title: 'Nightmare Steed', category: 'Sculpture', icon: 'fa-horse-head', src: placeholderBase + 'steed/400/300' }
-      ],
-      '2d': [
-        { title: 'Witching Hour', category: 'Digital Paint', icon: 'fa-hat-wizard', src: placeholderBase + 'witch/400/300' },
-        { title: 'Shadow Puppet', category: 'Animation Loop', icon: 'fa-film', src: placeholderBase + 'shadow/400/300' },
-        { title: 'Lunar Moth', category: 'Illustration', icon: 'fa-feather', src: placeholderBase + 'moth/400/300' }
-      ],
-      'traditional': [
-        { title: 'Ink & Thorn', category: 'Ink on paper', icon: 'fa-pen-fancy', src: placeholderBase + 'inkthorn/400/300' },
-        { title: 'Charcoal Moon', category: 'Charcoal', icon: 'fa-draw-polygon', src: placeholderBase + 'charcoalmoon/400/300' }
-      ]
-    };
-
-    // galleries store the current state
-    const galleries = {
-      '3d': [],
-      '2d': [],
-      'traditional': []
-    };
-
-    // LIGHTBOX
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(src, caption) {
-      lightboxImg.src = src;
-      lightboxCaption.textContent = caption;
-      lightboxImg.classList.remove('zoomed');
-      lightbox.classList.add('active');
-    }
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightboxImg.classList.remove('zoomed');
-    }
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-    lightboxImg.addEventListener('click', function(e) {
-      e.stopPropagation();
-      lightboxImg.classList.toggle('zoomed');
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    // ---- HELPERS: editable title/category ----
-    function makeEditable(element, type, index, field) {
-      element.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const currentText = galleries[type][index][field];
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.value = currentText;
-        input.style.cssText = `
-          background: rgba(30,15,50,0.9);
-          border: 1px solid #a78bfa;
-          color: #f3e8ff;
-          font-family: 'Cinzel', serif;
-          font-size: ${field === 'title' ? '1.4rem' : '0.85rem'};
-          padding: 0.3rem 0.6rem;
-          border-radius: 8px;
-          width: 90%;
-          outline: none;
-        `;
-        element.innerHTML = '';
-        element.appendChild(input);
-        input.focus();
-        input.select();
-        input.addEventListener('blur', () => {
-          const newVal = input.value.trim() || currentText;
-          galleries[type][index][field] = newVal;
-          renderGallery(type);
-        });
-        input.addEventListener('keydown', (ev) => {
-          if (ev.key === 'Enter') input.blur();
-        });
-      });
-    }
-
-    // ---- RENDER ----
-    function renderGallery(type) {
-      const container = document.getElementById(`${type}-gallery`);
-      if (!container) return;
-      const items = galleries[type];
-      container.innerHTML = '';
-
-      if (items.length === 0) {
-        container.innerHTML = `<p style="color:#9b8ac4; text-align:center; grid-column:1/-1; font-family: 'Cinzel', serif;">✨ Awaiting your creations.</p>`;
-        return;
-      }
-
-      items.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'art-card';
-
-        const imageDiv = document.createElement('div');
-        imageDiv.className = 'image-placeholder';
-
-        // Image (static placeholder)
-        const img = document.createElement('img');
-        img.src = item.src || 'https://picsum.photos/seed/default/400/300';
-        img.alt = item.title;
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        img.addEventListener('click', (e) => {
-          e.stopPropagation();
-          openLightbox(img.src, item.title);
-        });
-        imageDiv.appendChild(img);
-
-        // info
-        const infoDiv = document.createElement('div');
-        infoDiv.className = 'card-info';
-
-        const titleEl = document.createElement('h3');
-        titleEl.textContent = item.title;
-        const editIcon = document.createElement('span');
-        editIcon.className = 'edit-icon';
-        editIcon.innerHTML = ' <i class="fas fa-pen"></i>';
-        titleEl.appendChild(editIcon);
-        makeEditable(titleEl, type, index, 'title');
-
-        const catEl = document.createElement('div');
-        catEl.className = 'category';
-        catEl.textContent = item.category;
-        makeEditable(catEl, type, index, 'category');
-
-        // remove button (keeps UI clean)
-        const removeBtn = document.createElement('button');
-        removeBtn.className = 'upload-btn';
-        removeBtn.innerHTML = '<i class="fas fa-trash"></i> Remove';
-        removeBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          galleries[type].splice(index, 1);
-          renderGallery(type);
-        });
-
-        infoDiv.appendChild(titleEl);
-        infoDiv.appendChild(catEl);
-        infoDiv.appendChild(removeBtn);
-
-        card.appendChild(imageDiv);
-        card.appendChild(infoDiv);
-        container.appendChild(card);
-      });
-    }
-
-    function renderAllGalleries() {
-      renderGallery('3d');
-      renderGallery('2d');
-      renderGallery('traditional');
-    }
-
-    // ---- INIT: copy default items into galleries ----
-    function initGalleries() {
-      for (let type in defaultItems) {
-        galleries[type] = defaultItems[type].map(item => ({
-          title: item.title,
-          category: item.category,
-          icon: item.icon || 'fa-image',
-          src: item.src || 'https://picsum.photos/seed/default/400/300',
-          isPlaceholder: true
-        }));
-      }
-      renderAllGalleries();
-    }
-
-    initGalleries();
-  })();
-</script>
 </body>
 </html>
